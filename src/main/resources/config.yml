@@ -1,0 +1,36 @@
+# ESNVoteRewards configuration
+# Placeholders in commands and messages: {player} {service} {count}
+#   {count} = how many votes this player has been rewarded for today, including this one.
+
+# Time zone used to decide when a new "vote day" starts.
+timezone: UTC
+
+# Commands run by the console for the FIRST vote of the day (any site).
+first-vote-commands:
+  - "give {player} diamond 2"
+
+# Commands run for each EXTRA vote on another site the same day.
+extra-vote-commands:
+  - "give {player} iron_ingot 4"
+
+# Extra votes rewarded per day after the first one (0 = only the first vote is rewarded).
+max-extra-votes-per-day: 5
+
+# Votes for players who are offline are saved and rewarded when they next join,
+# as long as they join within this many days.
+offline-queue-days: 7
+
+messages:
+  rewarded: "&aThanks for voting on &e{service}&a!"
+  thanks-only: "&aThanks for voting on &e{service}&a! You've hit today's reward limit."
+  broadcast: "&b{player} &7voted for the server on &e{service}&7! Type &e/vote &7to vote too."
+  vote-header: "&6Vote for us and get rewards:"
+  vote-line: "&e- {name}"
+
+# Seconds between vote broadcasts (stops chat spam when one player votes on many sites).
+broadcast-cooldown-seconds: 30
+
+# Links shown by /vote. Each name is clickable in chat.
+vote-links:
+  - name: "Example list"
+    url: "https://example.com/vote"

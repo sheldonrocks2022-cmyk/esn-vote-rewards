@@ -1,0 +1,22 @@
+name: ESNVoteRewards
+version: '${project.version}'
+main: com.esnhosting.voterewards.ESNVoteRewards
+api-version: '1.20'
+description: Vote rewards for NuVotifier with an offline queue and Bedrock name matching.
+author: ESN Hosting
+website: https://esnoffical.com
+softdepend: [Votifier]
+commands:
+  vote:
+    description: Show the vote links for this server.
+    aliases: [votes]
+    permission: esnvoterewards.vote
+  votereward:
+    description: Admin tools for ESNVoteRewards.
+    usage: /votereward <reload|test|stats>
+    permission: esnvoterewards.admin
+permissions:
+  esnvoterewards.vote:
+    default: true
+  esnvoterewards.admin:
+    default: op
